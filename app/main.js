@@ -29,12 +29,20 @@ const getters = {
   getNoteCount: state => state.notes.length,
 }
 
+const store = new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  getters
+})
+
 const inputComponent = {
   template: `<input placeholder='Enter a note' class="input is-small" type="text" />`,
 }
 
 new Vue({
   el: '#app',
+  store,
   components: {
     'input-component': inputComponent
   }
